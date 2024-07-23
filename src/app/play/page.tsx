@@ -2,6 +2,7 @@
 import { Form } from "@/components/Form";
 import { Modal } from "@/components/Modal";
 import { useGetQuestions } from "@/hooks/useGetQuestions";
+import { Great_Vibes } from "next/font/google";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import {
@@ -19,6 +20,11 @@ interface dslType {
   Pergunta: string;
   Resposta: Array<string>;
 }
+
+const gv = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400",
+});
 export default function Play() {
   const router = useRouter();
   let [questionNumber, setQuestionNumber] = useState(0);
