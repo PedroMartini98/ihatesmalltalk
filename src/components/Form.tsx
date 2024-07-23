@@ -1,10 +1,23 @@
 "use client";
 import { useState } from "react";
-import { Cinzel, Prata } from "next/font/google";
-import { addDoc, collection, doc, getDoc, setDoc } from "firebase/firestore";
+import { Cinzel, Cookie, Great_Vibes } from "next/font/google";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 import { dbq } from "@/firebase/firebase";
 import { toast } from "react-toastify";
 import { IoClose } from "react-icons/io5";
+
+const cookie = Cookie({
+  weight: "400",
+  subsets: ["latin"],
+});
+const cinzel = Cinzel({
+  weight: "600",
+  subsets: ["latin"],
+});
+const gv = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export function Form({ changeFormState }: any) {
   const [inputs, SetInputs] = useState({
@@ -75,10 +88,10 @@ export function Form({ changeFormState }: any) {
         className=" h-[85vh] w-[77vw] overflow-y-auto overflow-x-hidden caixa text-metal-gold flex flex-col p-2 justify-betwee 
         absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
       >
-        <div className="${prata.className} text-xl flex font-bold flex-col ">
+        <div className=" text-xl flex font-medium flex-col ">
           <div className="flex flex-row justify-between">
             <p className="text-metal-gold my-2">
-              Como gostaria de se indentificar?:
+              Como gostaria de se indentificar?
             </p>
             <IoClose
               className="hover:cursor-pointer text-xl"
@@ -90,16 +103,16 @@ export function Form({ changeFormState }: any) {
             name="Nome"
             value={inputs.Nome}
             placeholder="Deixe em branco caso queira permanecer anônimo"
-            className="p-3 text-metal-gold placeholder-opacity-20 placeholder-slate-200
-           caixa w-[75vw]"
+            className={`${cookie.className} text-4xl p-3 text-metal-gold placeholder-opacity-20 placeholder-slate-200
+           caixa w-[75vw]`}
           />
           <p className="text-metal-gold my-2">Pergunta:</p>
           <input
             onChange={handleChangeInputs}
             name="Pergunta"
             value={inputs.Pergunta}
-            className=" p-3 text-metal-gold bg-opacity-90
-          caixa  w-[75vw]"
+            className={` ${cookie.className} p-3 text-4xl text-metal-gold bg-opacity-90
+          caixa  w-[75vw]`}
           />
           <p className="text-metal-gold my-2">Sua resposta:</p>
         </div>
@@ -107,13 +120,13 @@ export function Form({ changeFormState }: any) {
           onChange={handleChangeTextarea}
           name="Resposta"
           value={inputs.Resposta}
-          className=" ${prata.className} text-opacity-100 text-xl text-justify resize-none h-[15vw] w-[75vw] p-3 mb-2 text-metal-gold
-           caixa "
+          className={` ${cookie.className} text-opacity-100 text-3xl text-justify resize-none h-[15vw] w-[75vw] p-3 mb-2 text-metal-gold
+           caixa `}
         />
         <div className="flex-col flex items-center ">
           <button
-            className="text-metal-gold ${cinzel.className}  p-4 w-[75vw] text-xl 
-          caixa"
+            className={`text-metal-gold ${cinzel.className}  p-4 w-[75vw] text-xl 
+          caixa`}
           >
             Enviar
           </button>

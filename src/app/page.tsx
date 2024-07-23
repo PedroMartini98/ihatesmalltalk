@@ -1,6 +1,17 @@
 "use client";
 import { Accordion } from "@/components/Accordion";
+import { Cinzel, Great_Vibes } from "next/font/google";
 import { useRouter } from "next/navigation";
+
+const gv = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const cinzel = Cinzel({
+  weight: "600",
+  subsets: ["latin"],
+});
 
 export default function Home() {
   const router = useRouter();
@@ -8,7 +19,9 @@ export default function Home() {
     <main className="backgroundiv1 bg-cover min-h-screen overflow-hidden">
       <div className="flex  flex-col items-center justify-between ">
         <div className="caixa mb-[6rem] w-[650px]">
-          <p className="text-metal-gold  px-5 text-center pt-5 overflow-hidden text-6xl hover:cursor-pointer">
+          <p
+            className={`text-metal-gold ${gv.className} px-5 text-center pt-5 overflow-hidden text-6xl hover:cursor-pointer`}
+          >
             I Hate Small Talk
           </p>
         </div>
@@ -43,7 +56,7 @@ export default function Home() {
           onClick={() => {
             router.push("/play");
           }}
-          className="text-metal-gold mt-32 p-5 text-3xl caixa"
+          className={`text-metal-gold mt-32 p-5 text-3xl ${cinzel.className} caixa`}
         >
           Jogar
         </button>

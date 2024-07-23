@@ -2,7 +2,7 @@
 import { Form } from "@/components/Form";
 import { Modal } from "@/components/Modal";
 import { useGetQuestions } from "@/hooks/useGetQuestions";
-import { Great_Vibes } from "next/font/google";
+import { Cookie, Great_Vibes } from "next/font/google";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import {
@@ -22,6 +22,10 @@ interface dslType {
 }
 
 const gv = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400",
+});
+const cookie = Cookie({
   subsets: ["latin"],
   weight: "400",
 });
@@ -100,14 +104,13 @@ export default function Play() {
         </div>
         <ToastContainer />
 
-        {isModalOpen && <Modal changeModalState={changeModalState} dsl={dsl} />}
-        {isFormOpen && <Form changeFormState={changeFormState} />}
-
         <div className="caixa text-metal-gold text-xl p-2 w-[95vw] h-[80vh] break-words overflow-auto scroll- my-6">
           <div className="flex flex-col ">
             <div className="flex flex-row justify-between">
               <FaCaretLeft className="" onClick={changeQuestionLeft} />
-              <p className=" text-5xl text-center">{dsl.Pergunta}</p>
+              <p className={`${gv.className} text-5xl text-center`}>
+                {dsl.Pergunta}
+              </p>
               <FaCaretRight
                 className="hover:cursor-pointer"
                 onClick={changeQuestionRight}
@@ -122,13 +125,13 @@ export default function Play() {
           </div>
           <div className="flex flex-row items-center justify-between">
             <h1 className="mb-3">Respostas:</h1>
-            <p className="  text-4xl text-right">
+            <p className={` ${gv.className} text-4xl text-right`}>
               {dsl.Nome ? `- ${dsl.Nome}` : "- Um amigo"}
             </p>
           </div>
           <div className="flex items-center flex-col">
             <div className="w-[95%] h-[45vh] border-4 rounded-md border-metal-gold p-2 overflow-auto">
-              <p className=" text-4xl text-justify">
+              <p className={`${cookie.className} text-4xl text-justify`}>
                 {[dsl.Resposta[answerNumber]]}
               </p>
             </div>
@@ -158,6 +161,8 @@ export default function Play() {
             </p>
           </div>
         </div>
+        {isFormOpen && <Form changeFormState={changeFormState} />}
+        {isModalOpen && <Modal changeModalState={changeModalState} dsl={dsl} />}
       </main>
     );
   }
