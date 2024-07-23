@@ -1,36 +1,18 @@
 "use client";
 import { Accordion } from "@/components/Accordion";
-import { Cinzel, Great_Vibes, Prata } from "next/font/google";
 import { useRouter } from "next/navigation";
 
-const prata = Prata({
-  subsets: ["latin"],
-  variable: "--font-prata",
-  weight: "400",
-});
-const cinzel = Cinzel({
-  subsets: ["latin"],
-  variable: "--font-cinzel",
-  weight: "600",
-});
-const great_Vibes = Great_Vibes({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-gv",
-});
 export default function Home() {
   const router = useRouter();
   return (
     <main className="backgroundiv1 bg-cover min-h-screen overflow-hidden">
       <div className="flex  flex-col items-center justify-between ">
         <div className="caixa mb-[6rem] w-[650px]">
-          <p
-            className={`text-metal-gold  px-5 text-center pt-5 overflow-hidden text-6xl hover:cursor-pointer`}
-          >
+          <p className="text-metal-gold  px-5 text-center pt-5 overflow-hidden text-6xl hover:cursor-pointer">
             I Hate Small Talk
           </p>
         </div>
-        <div className={` `}>
+        <div>
           <Accordion
             title={"O que é?"}
             description={`Um jogo feito para ter conversas profundas sem o tom de entrevista de emprego.
@@ -61,7 +43,7 @@ export default function Home() {
           onClick={() => {
             router.push("/play");
           }}
-          className={`text-metal-gold mt-32 p-5 text-3xl caixa`}
+          className="text-metal-gold mt-32 p-5 text-3xl caixa"
         >
           Jogar
         </button>

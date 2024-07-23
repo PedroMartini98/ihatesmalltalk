@@ -20,12 +20,6 @@ const config: Config = {
 
         "metal-gold": "#D4AF37",
       },
-      fontFamily: {
-        cinzel: ["var(--font-cinzel)"],
-        great_Vibes: ["var(--font-gv)"],
-        cookie: ["var(--font-cookie)"],
-        prata: ["var(--font-prata)"],
-      },
     },
   },
   plugins: [],

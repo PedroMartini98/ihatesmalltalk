@@ -1,25 +1,5 @@
 import type { Metadata } from "next";
-import { Cookie, Great_Vibes, Inter, Prata } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
-
-const great_Vibes = Great_Vibes({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-gv",
-});
-
-const prata = Prata({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-prata",
-});
-const cookie = Cookie({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-cookie",
-});
 
 export const metadata: Metadata = {
   title: "I Hate Small Talk",
@@ -33,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={prata.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

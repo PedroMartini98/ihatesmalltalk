@@ -6,18 +6,6 @@ import { dbq } from "@/firebase/firebase";
 import { toast } from "react-toastify";
 import { IoClose } from "react-icons/io5";
 
-const prata = Prata({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-prata",
-});
-
-const cinzel = Cinzel({
-  subsets: ["latin"],
-  weight: "600",
-  variable: "--font-cinzel",
-});
-
 export function Form({ changeFormState }: any) {
   const [inputs, SetInputs] = useState({
     Nome: "",
@@ -87,7 +75,7 @@ export function Form({ changeFormState }: any) {
         className=" h-[85vh] w-[77vw] overflow-y-auto overflow-x-hidden caixa text-metal-gold flex flex-col p-2 justify-betwee 
         absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
       >
-        <div className={`${prata.className} text-xl flex font-bold flex-col `}>
+        <div className="${prata.className} text-xl flex font-bold flex-col ">
           <div className="flex flex-row justify-between">
             <p className="text-metal-gold my-2">
               Como gostaria de se indentificar?:
@@ -119,13 +107,13 @@ export function Form({ changeFormState }: any) {
           onChange={handleChangeTextarea}
           name="Resposta"
           value={inputs.Resposta}
-          className={` ${prata.className} text-opacity-100 text-xl text-justify resize-none h-[15vw] w-[75vw] p-3 mb-2 text-metal-gold
-           caixa `}
+          className=" ${prata.className} text-opacity-100 text-xl text-justify resize-none h-[15vw] w-[75vw] p-3 mb-2 text-metal-gold
+           caixa "
         />
         <div className="flex-col flex items-center ">
           <button
-            className={`text-metal-gold ${cinzel.className}  p-4 w-[75vw] text-xl 
-          caixa`}
+            className="text-metal-gold ${cinzel.className}  p-4 w-[75vw] text-xl 
+          caixa"
           >
             Enviar
           </button>
