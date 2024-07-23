@@ -25,12 +25,12 @@ export default function Home() {
       <div className="flex  flex-col items-center justify-between ">
         <div className="caixa mb-[6rem] w-[650px]">
           <p
-            className={`text-metal-gold ${great_Vibes.className} px-5 text-center pt-5 overflow-hidden text-6xl hover:cursor-pointer`}
+            className={`text-metal-gold  px-5 text-center pt-5 overflow-hidden text-6xl hover:cursor-pointer`}
           >
             I Hate Small Talk
           </p>
         </div>
-        <div className={` ${prata.className}`}>
+        <div className={` `}>
           <Accordion
             title={"O que é?"}
             description={`Um jogo feito para ter conversas profundas sem o tom de entrevista de emprego.
@@ -61,7 +61,7 @@ export default function Home() {
           onClick={() => {
             router.push("/play");
           }}
-          className={`text-metal-gold ${cinzel.className} mt-32 p-5 text-3xl caixa`}
+          className={`text-metal-gold mt-32 p-5 text-3xl caixa`}
         >
           Jogar
         </button>

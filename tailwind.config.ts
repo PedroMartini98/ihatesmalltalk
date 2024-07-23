@@ -22,7 +22,9 @@ const config: Config = {
       },
       fontFamily: {
         cinzel: ["var(--font-cinzel)"],
-        great_Vibes: ["var(--font-great-vibes)"],
+        great_Vibes: ["var(--font-gv)"],
+        cookie: ["var(--font-cookie)"],
+        prata: ["var(--font-prata)"],
       },
     },
   },

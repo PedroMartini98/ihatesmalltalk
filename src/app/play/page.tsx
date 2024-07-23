@@ -106,7 +106,7 @@ export default function Play() {
           onClick={() => {
             router.push("/");
           }}
-          className={`${great_Vibes.className} px-5 pt-5 text-center w-[650px] text-6xl caixa text-metal-gold hover:cursor-pointer`}
+          className={` px-5 pt-5 text-center w-[650px] text-6xl caixa text-metal-gold hover:cursor-pointer`}
         >
           I Hate Small Talk
         </div>
@@ -119,9 +119,7 @@ export default function Play() {
           <div className="flex flex-col ">
             <div className="flex flex-row justify-between">
               <FaCaretLeft className="" onClick={changeQuestionLeft} />
-              <p className={`${great_Vibes.className} text-5xl text-center`}>
-                {dsl.Pergunta}
-              </p>
+              <p className={` text-5xl text-center`}>{dsl.Pergunta}</p>
               <FaCaretRight
                 className="hover:cursor-pointer"
                 onClick={changeQuestionRight}
@@ -135,14 +133,14 @@ export default function Play() {
             </div>
           </div>
           <div className="flex flex-row items-center justify-between">
-            <h1 className={`mb-3 ${prata.className}`}>Respostas:</h1>
-            <p className={` ${great_Vibes.className} text-4xl text-right`}>
+            <h1 className={`mb-3 `}>Respostas:</h1>
+            <p className={`  text-4xl text-right`}>
               {dsl.Nome ? `- ${dsl.Nome}` : "- Um amigo"}
             </p>
           </div>
           <div className="flex items-center flex-col">
             <div className="w-[95%] h-[45vh] border-4 rounded-md border-metal-gold p-2 overflow-auto">
-              <p className={` ${cookie.className} text-4xl text-justify`}>
+              <p className={`  text-4xl text-justify`}>
                 {[dsl.Resposta[answerNumber]]}
               </p>
             </div>
@@ -159,14 +157,14 @@ export default function Play() {
           </div>
           <div className="flex flex-row justify-between">
             <p
-              className={` ${prata.className} hover:cursor-pointer hover:underline flex justify-end p-3`}
+              className={`  hover:cursor-pointer hover:underline flex justify-end p-3`}
               onClick={changeFormState}
             >
               Clique aqui para deixar sua pergunta!
             </p>
             <p
               onClick={changeModalState}
-              className={` ${prata.className} hover:cursor-pointer hover:underline flex justify-end p-3`}
+              className={` hover:cursor-pointer hover:underline flex justify-end p-3`}
             >
               Quer deixar sua resposta também?
             </p>
