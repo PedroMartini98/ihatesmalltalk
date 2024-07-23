@@ -1,112 +1,70 @@
-import Image from "next/image";
+"use client";
+import { Accordion } from "@/components/Accordion";
+import { Cinzel, Great_Vibes, Prata } from "next/font/google";
+import { useRouter } from "next/navigation";
 
+const prata = Prata({
+  subsets: ["latin"],
+  variable: "--font-prata",
+  weight: "400",
+});
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  variable: "--font-cinzel",
+  weight: "600",
+});
+const great_Vibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-gv",
+});
 export default function Home() {
+  const router = useRouter();
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="backgroundiv1 bg-cover min-h-screen overflow-hidden">
+      <div className="flex  flex-col items-center justify-between ">
+        <div className="caixa mb-[6rem] w-[650px]">
+          <p
+            className={`text-metal-gold ${great_Vibes.className} px-5 text-center pt-5 overflow-hidden text-6xl hover:cursor-pointer`}
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            I Hate Small Talk
+          </p>
         </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+        <div className={` ${prata.className}`}>
+          <Accordion
+            title={"O que é?"}
+            description={`Um jogo feito para ter conversas profundas sem o tom de entrevista de emprego.
+               O conceito é fortemente inspirado no artista italiano Greg Goya e no podcast "The Diary of a CEO" de Steven Bartlett. 
+               No final do programa, cada convidado deixa uma pergunta escrita à mão no diário de Steven sem saber quem irá respondê-la.
+                A ideia é produzir perguntas interessantes sobre assuntos profundos sem a pretensão de sondar uma parte específica da vida de alguém. 
+                O próprio host tem uma iniciativa semelhante chamada "The Conversation Cards", vendida por 25 euros em seu site.
+                 Esta é uma versão traduzida e gratuita feita com perguntas de brasileiros para brasileiros.
+            `}
+          />
+          <Accordion
+            title={"Regras:"}
+            description={`Bom, creio que não sejam muitas. 1 - Não minta
+              2 - Não precisa responder nada que não quiser 
+              3 - Se for deixar uma pergunta precisa deixar sua resposta
+            `}
+          />
+          <Accordion
+            title={"Interface:"}
+            description={`Ela foi feita pra ser intuitiva, mas na duvida aqui está a explicação: As setas do lado da pergunta mudam a pergunta. 
+              O dado busca uma pergunta aleatória. As setas debaixo da resposta navegam entre as respostas para determinada pergunta. Para deixar sua
+              pergunta clique em "Clique aqui para deixar sua pergunta!". Para deixar sua resposta clique em "Quer deixar sua resposta também?". Para
+              jogar clique no botão "Jogar" abaixo.
+            `}
+          />
+        </div>
+        <button
+          onClick={() => {
+            router.push("/play");
+          }}
+          className={`text-metal-gold ${cinzel.className} mt-32 p-5 text-3xl caixa`}
         >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          Jogar
+        </button>
       </div>
     </main>
   );
