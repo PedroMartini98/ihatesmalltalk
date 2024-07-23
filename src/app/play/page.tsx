@@ -119,7 +119,7 @@ export default function Play() {
             <div className="px-[46vw]">
               <IoDice
                 onClick={getRandomQuestion}
-                className="hover:cursor-pointer "
+                className=" text-2xl  hover:cursor-pointer "
               />
             </div>
           </div>

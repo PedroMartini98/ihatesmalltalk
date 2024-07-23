@@ -10,7 +10,7 @@ const cookie = Cookie({
   subsets: ["latin"],
 });
 const cinzel = Cinzel({
-  weight: "400",
+  weight: "600",
   subsets: ["latin"],
 });
 
