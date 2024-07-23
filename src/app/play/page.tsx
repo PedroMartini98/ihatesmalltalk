@@ -94,7 +94,7 @@ export default function Play() {
           onClick={() => {
             router.push("/");
           }}
-          className={` px-5 pt-5 text-center w-[650px] text-6xl caixa text-metal-gold hover:cursor-pointer`}
+          className={` ${gv.className} px-5 pt-5 text-center w-[650px] text-6xl caixa text-metal-gold hover:cursor-pointer`}
         >
           I Hate Small Talk
         </div>
