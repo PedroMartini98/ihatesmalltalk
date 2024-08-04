@@ -18,10 +18,10 @@ export function Accordion({ title, description }: AccordionProps) {
     setIsAccordionOpen(!isAccordionOpen);
   };
   return (
-    <div className="text-metal-gold bg-opacity-90 caixa p-2 mb-4 w-[75vw]">
+    <div className="text-metal-gold bg-opacity-90 caixa p-2 mb-4 w-[80vw]">
       <button onClick={changeAccordionState} className="py-2 flex ">
         <span
-          className={`flex justify-between text-3xl ${cinzel.className} w-[73vw]`}
+          className={`flex justify-between text-3xl ${cinzel.className} w-[77vw]`}
         >
           {title}
           {isAccordionOpen ? <HiMinusSm /> : <HiPlusSm />}
