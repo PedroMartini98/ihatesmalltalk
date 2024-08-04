@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <main className="backgroundiv1 bg-cover min-h-screen overflow-hidden">
       <div className="flex  flex-col items-center justify-between ">
-        <div className="caixa mb-[6rem] w-[650px] sm::w-[600px]">
+        <div className="caixa mb-[6rem] w-[600px]">
           <p
             className={`text-metal-gold ${gv.className} px-5 text-center pt-5 overflow-hidden text-6xl hover:cursor-pointer`}
           >
