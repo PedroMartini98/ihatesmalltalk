@@ -98,21 +98,24 @@ export default function Play() {
           onClick={() => {
             router.push("/");
           }}
-          className={` ${gv.className} px-5 pt-5 text-center w-[550px] text-5xl caixa text-metal-gold hover:cursor-pointer`}
+          className={` ${gv.className} px-5 pt-5 text-center md:w-[550px] w-[300px] text-3xl md:text-5xl caixa text-metal-gold hover:cursor-pointer`}
         >
           I Hate Small Talk
         </div>
         <ToastContainer />
 
-        <div className="caixa text-metal-gold text-xl p-2 w-[95vw] h-[80vh] break-words overflow-auto scroll- my-6">
+        <div className="caixa text-metal-gold text-xl p-2 w-[99vw] md:w-[95vw] h-[80vh] break-words overflow-auto scroll- my-6">
           <div className="flex flex-col ">
             <div className="flex flex-row justify-between">
-              <FaCaretLeft className="" onClick={changeQuestionLeft} />
-              <p className={`${gv.className} text-5xl text-center`}>
+              <FaCaretLeft
+                className="text-5xl md:text-2xl hover:cursor-pointer"
+                onClick={changeQuestionLeft}
+              />
+              <p className={`${gv.className} text-3xl md:text-5xl text-center`}>
                 {dsl.Pergunta}
               </p>
               <FaCaretRight
-                className="hover:cursor-pointer"
+                className="text-5xl md:text-2xl hover:cursor-pointer"
                 onClick={changeQuestionRight}
               />
             </div>
@@ -125,37 +128,40 @@ export default function Play() {
           </div>
           <div className="flex flex-row items-center justify-between">
             <h1 className="mb-3">Respostas:</h1>
-            <p className={` ${gv.className} text-4xl text-right`}>
+            <p className={` ${gv.className} text-3xl md:text-4xl text-right`}>
               {dsl.Nome ? `- ${dsl.Nome}` : "- Um amigo"}
             </p>
           </div>
           <div className="flex items-center flex-col">
-            <div className="w-[95%] h-[45vh] border-4 rounded-md border-metal-gold p-2 overflow-auto">
-              <p className={`${cookie.className} text-4xl text-justify`}>
-                {[dsl.Resposta[answerNumber]]}
-              </p>
+            <div className="flex flex-row items-center">
+              <FaAngleLeft
+                className="hover:cursor-pointer text-2xl"
+                onClick={changeAnswerLeft}
+              />
+              <div className="w-[95%] h-[45vh] border-4 rounded-md border-metal-gold p-2 overflow-auto">
+                <p
+                  className={`${cookie.className} text-2xl md:text-4xl text-justify`}
+                >
+                  {[dsl.Resposta[answerNumber]]}
+                </p>
+              </div>
+              <FaAngleRight
+                className="hover:cursor-pointer text-2xl"
+                onClick={changeAnswerRight}
+              />
             </div>
           </div>
-          <div className="flex flex-row justify-end pr-[2.2%] pt-[0.7%]">
-            <FaAngleLeft
-              className="hover:cursor-pointer"
-              onClick={changeAnswerLeft}
-            />
-            <FaAngleRight
-              className="hover:cursor-pointer"
-              onClick={changeAnswerRight}
-            />
-          </div>
+          <div className="flex flex-row justify-end pr-[2.2%] pt-[0.7%]"></div>
           <div className="flex flex-row justify-between">
             <p
-              className=" hover:cursor-pointer hover:underline flex justify-end p-3"
+              className=" hover:cursor-pointer text-sm hover:underline flex justify-end p-3"
               onClick={changeFormState}
             >
               Clique aqui para deixar sua pergunta!
             </p>
             <p
               onClick={changeModalState}
-              className="hover:cursor-pointer hover:underline flex justify-end p-3"
+              className="hover:cursor-pointer text-sm hover:underline flex justify-end p-3 "
             >
               Quer deixar sua resposta também?
             </p>
