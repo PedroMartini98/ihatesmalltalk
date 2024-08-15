@@ -41,7 +41,7 @@ export function Modal({ changeModalState, dsl }: any) {
       ></div>
       <div
         className=" absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]
-       h-[72vh] w-[77vw] caixa text-metal-gold flex flex-col p-2 justify-between text-xl"
+       h-[82vh] w-[87vw] caixa text-metal-gold flex flex-col p-2 justify-between text-xl"
       >
         <div className="flex flex-row justify-between">
           <h1 className="my-2">Sua reposta:</h1>
@@ -53,7 +53,7 @@ export function Modal({ changeModalState, dsl }: any) {
         <textarea
           onChange={changeAnswer}
           value={answer}
-          className={`${cookie.className} h-[46vh] w-[75vw] resize-none text-justify text-3xl p-1 caixa `}
+          className={`${cookie.className} h-[46vh] w-[80vw] md:w-[85vw] resize-none text-justify text-3xl m-1 caixa `}
           name=""
           id=""
         ></textarea>

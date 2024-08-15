@@ -85,7 +85,7 @@ export function Form({ changeFormState }: any) {
       ></div>
       <form
         onSubmit={handleSubmit}
-        className=" h-[85vh] w-[77vw] overflow-y-auto overflow-x-hidden caixa text-metal-gold flex flex-col p-2 justify-betwee 
+        className=" h-[85vh] w-[97vw] md:w-[87vw] overflow-y-auto overflow-x-hidden caixa text-metal-gold flex flex-col p-2 justify-betwee 
         absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
       >
         <div className=" text-xl flex font-medium flex-col ">
@@ -104,7 +104,7 @@ export function Form({ changeFormState }: any) {
             value={inputs.Nome}
             placeholder="Deixe em branco caso queira permanecer anônimo"
             className={`${cookie.className} text-4xl p-3 text-metal-gold placeholder-opacity-20 placeholder-slate-200
-           caixa w-[75vw]`}
+           caixa w-[90vw] md:w-[85vw] `}
           />
           <p className="text-metal-gold my-2">Pergunta:</p>
           <input
@@ -112,7 +112,7 @@ export function Form({ changeFormState }: any) {
             name="Pergunta"
             value={inputs.Pergunta}
             className={` ${cookie.className} p-3 text-4xl text-metal-gold bg-opacity-90
-          caixa  w-[75vw]`}
+          caixa  md:w-[85vw]  w-[90vw]`}
           />
           <p className="text-metal-gold my-2">Sua resposta:</p>
         </div>
@@ -120,12 +120,12 @@ export function Form({ changeFormState }: any) {
           onChange={handleChangeTextarea}
           name="Resposta"
           value={inputs.Resposta}
-          className={` ${cookie.className} text-opacity-100 text-3xl text-justify resize-none h-[15vw] w-[75vw] p-3 mb-2 text-metal-gold
+          className={` ${cookie.className} text-opacity-100 text-3xl text-justify resize-none h-[45vh] w-[90vw] md:w-[85vw]  p-3 mb-2 text-metal-gold
            caixa `}
         />
         <div className="flex-col flex items-center ">
           <button
-            className={`text-metal-gold ${cinzel.className}  p-4 w-[75vw] text-xl 
+            className={`text-metal-gold ${cinzel.className}  p-4 w-[84vw] text-xl 
           caixa`}
           >
             Enviar
